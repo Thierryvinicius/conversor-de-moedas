@@ -22,7 +22,7 @@ public class ConexaoApi {
 
 
     public void conectarApi() throws IOException, InterruptedException {
-        String apikey = "5f24543c01c5a0ccc7042bbd";
+        String apikey = "SUA_API_KEY";
         String endereco = "https://v6.exchangerate-api.com/v6/"+apikey+"/pair/"+this.base_code+"/"+this.target_code+"/"+this.amount;
 
         HttpClient client = HttpClient.newHttpClient();
