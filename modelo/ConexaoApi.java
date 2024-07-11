@@ -28,10 +28,11 @@ public class ConexaoApi {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
         String json = response.body();
         Gson gson = new GsonBuilder().create();
         Conversor conversor = gson.fromJson(json, Conversor.class);
+        System.out.println("****************************************************");
+        System.out.println("Conversão: "+ this.amount +" "+ this.base_code);
         System.out.println(conversor);
     }
 }

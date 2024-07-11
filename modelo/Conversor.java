@@ -6,8 +6,6 @@ public record Conversor(@SerializedName("base_code") String moedaEscolhida,
                         @SerializedName("conversion_result") double valorConvertido){
     @Override
     public String toString() {
-        return  "moeda escolhida = '" + moedaEscolhida + '\'' +
-                ", moeda convertida='" + moedaParaConverter + '\'' +
-                ", valor convertido=" + valorConvertido + " " + moedaParaConverter;
+        return  "Resultado: " + valorConvertido + " " + moedaParaConverter;
     }
 }
