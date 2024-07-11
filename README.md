@@ -40,6 +40,8 @@ conversor-moedas/
 │       ├── ConexaoApi.java
 │       ├── Conversor.java
 │       ├── InterfaceUsuario.java
-├── bin/
-│   └── modelo/
+│   └── principal/
+│       ├── Main.java
+│
 └── README.md
+└── .gitignore
