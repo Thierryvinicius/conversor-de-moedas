@@ -24,15 +24,20 @@ public class ConexaoApi {
     public void conectarApi() throws IOException, InterruptedException {
         String apikey = "SUA_API_KEY";
         String endereco = "https://v6.exchangerate-api.com/v6/"+apikey+"/pair/"+this.base_code+"/"+this.target_code+"/"+this.amount;
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        String json = response.body();
-        Gson gson = new GsonBuilder().create();
-        Conversor conversor = gson.fromJson(json, Conversor.class);
-        System.out.println("****************************************************");
-        System.out.println("Conversão: "+ this.amount +" "+ this.base_code);
-        System.out.println(conversor);
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String json = response.body();
+            Gson gson = new GsonBuilder().create();
+            Conversor conversor = gson.fromJson(json, Conversor.class);
+            System.out.println("****************************************************");
+            System.out.println("Conversão: " + this.amount + " " + this.base_code);
+            System.out.println(conversor);
+        }catch(IOException | InterruptedException e){
+            throw new RuntimeException();
+        }catch(Exception e){
+            System.out.println("Ocorreu algum erro na conexão");
+        }
     }
 }
