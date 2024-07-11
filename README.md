@@ -1,6 +1,6 @@
 # Conversor de Moedas
 
-Projeto desenvolvido para estudos e reforçar o aprendizado no uso de API (Exchange Rate API), consiste em um aplicativo em Java que permite converter valores entre diferentes moedas usando uma API de câmbio.
+Projeto desenvolvido para estudos e reforçar o aprendizado no uso de API, consiste em um aplicativo em Java que permite converter valores entre diferentes moedas usando uma API de câmbio(Exchange Rate API).
 
 ## Funcionalidades
 
